@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>VueJS</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="vue.js"></script>
+</head>
+
+<body>
+
+  <div id="app">
+    <h1 v-once>{{ title }}</h1>
+    <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
+    <hr>
+    <p v-html="finishedLink"></p>
+  </div>
+
+  <hr>
+
+  <!-- Input -->
+  <div id="field">
+    <input type="text" v-on:input="changeInput">
+    <p>{{ input }}</p>
+  </div>
+
+  <hr>
+
+  <!-- Counter -->
+  <div id="counter">
+    <button v-on:click='increase(2, $event)'>Click</button>
+    <p>{{ counter }}</p>
+    <!-- Output here -->
+    <p v-on:mousemove='updateCoordinates'>Coordinates: {{ x }} / {{ y }} - <span v-on:mousemove.stop=''>DEAD SPOT</span></p>
+    <input type="text" v-on:keyup.enter.space='alertMe'>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- JavaScript -->
+  <script src="main.js"></script>
+
+
+</body>
+
+</html>
