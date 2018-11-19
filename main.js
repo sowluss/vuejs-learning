@@ -23,7 +23,7 @@ new Vue({
   },
 
   methods: {
-    changeInput: function(e) {
+    changeInput: function (e) {
       this.input = e.target.value;
     }
   }
@@ -39,15 +39,71 @@ new Vue({
   },
 
   methods: {
-    increase: function(double, event) {
+    increase: function (double, event) {
       this.counter += double;
     },
-    updateCoordinates: function(e) {
+    updateCoordinates: function (e) {
       this.x = e.clientX;
       this.y = e.clientY;
     },
-    alertMe: function() {
+    alertMe: function () {
       alert('Alert!');
     }
   }
 })
+
+// Two-way binding
+
+new Vue({
+  el: '#app2',
+  data: {
+    name: 'Peter'
+  }
+});
+
+// Reacting to changes with computed propertes
+
+new Vue({
+  el: '#app3',
+  data: {
+    counter: 0,
+    secondCounter: 0
+  },
+
+  computed: {
+    output: function () {
+      return this.counter > 5 ? 'Greater 5' : 'Smaller 5'
+    }
+  },
+
+  watch: {
+    counter: function(value) {
+      var vm = this;
+      setTimeout(function() {
+        vm.counter = 0;
+        },  2000);
+    }
+  },
+
+  methods: {
+    result: function () {
+      return this.counter > 5 ? 'Greater 5' : 'Smaller 5'
+    }
+  }
+});
+
+// Shortcuts
+
+new Vue ({
+  el: 'app4',
+  data: {
+    link: 'http://google.com'
+  },
+
+  methods: {
+    changeLink: function() {
+      this.link = 'http://apple.com'
+    }
+  }
+
+});

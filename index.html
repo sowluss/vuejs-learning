@@ -32,11 +32,44 @@
   <!-- Counter -->
   <div id="counter">
     <button v-on:click='increase(2, $event)'>Click</button>
+    <!-- with JS -->
+    <button v-on:click='counter++'>Click</button>
     <p>{{ counter }}</p>
     <!-- Output here -->
     <p v-on:mousemove='updateCoordinates'>Coordinates: {{ x }} / {{ y }} - <span v-on:mousemove.stop=''>DEAD SPOT</span></p>
     <input type="text" v-on:keyup.enter.space='alertMe'>
   </div>
+
+  <hr>
+
+<!-- Two-way binding -->
+
+<div id="app2">
+<input type="text" v-model="name">
+<p>{{ name }}</p>
+</div>
+
+<hr>
+
+<!-- Reacting to changes with computed propertes -->
+
+<div id="app3">
+<button v-on:click="counter++">Increase</button>
+<button v-on:click="counter--">Decrease</button>
+<button v-on:click="secondCounter++">Second Increase</button>
+<p>Counter: {{ counter }} | {{ secondCounter }}</p>
+<p>Result: {{ result() }} | {{ output }}</p>
+</div>
+
+<hr>
+
+<!-- Shortcuts -->
+
+<div id="app4">
+  <button @click="changeLink">Click to Change Link</button>
+  <a :href="link">Link</a>
+</div>
+
 
 
 
