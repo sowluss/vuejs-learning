@@ -81,7 +81,7 @@ new Vue({
       var vm = this;
       setTimeout(function() {
         vm.counter = 0;
-        },  2000);
+        },  3000);
     }
   },
 
@@ -91,11 +91,12 @@ new Vue({
     }
   }
 });
+  
 
 // Shortcuts
 
 new Vue ({
-  el: 'app4',
+  el: '#app4',
   data: {
     link: 'http://google.com'
   },
@@ -107,3 +108,51 @@ new Vue ({
   }
 
 });
+
+
+// Dynamic styling with CSS classed
+
+new Vue ({
+  el: '#app5',
+    data: {
+      attachRed: false,
+      color: 'green'
+    },
+    computed: {
+      divClasses: function(){
+        return{
+          red: this.attachRed,
+          yellow: !this.attachRed
+        };
+      }
+    }
+
+  });
+
+  
+    // Setting Styles Dynamically (without CSS) 
+
+    new Vue ({
+      el: "#app6",
+      data: {
+        color: 'gray',
+        width: 100
+      },
+      computed: {
+        myStyle: function() {
+          return {
+            backgroundColor: this.color,
+            width: this.width + 'px'
+          };
+        }
+      }
+
+    });
+
+
+
+
+
+
+
+

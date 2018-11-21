@@ -1,0 +1,19 @@
+/* Dynamic styling with CSS classed */
+
+.demo {
+    height: 100px;
+    width: 100px;
+    background: gray;
+    display: inline-block;
+    margin: 10px;
+}
+
+.yellow {
+  background: yellow;
+}
+.green {
+  background: green;
+}
+.red {
+  background: red;
+}
